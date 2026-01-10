@@ -103,3 +103,134 @@ The **3-way handshake** is the process TCP uses to establish a reliable connecti
 - Prevents data loss by confirming both sides are synchronized.
 - Example: When you open a website, your browser and the server perform this handshake before any data (like HTML files) is transferred.
 
+
+
+# Computer Networking Notes
+
+A structured overview of key networking concepts and security mechanisms.
+
+---
+
+## 📌 Common Networking Ports
+
+Ports are communication endpoints used by protocols and services. Below are the most important ones:
+
+| **Port Number** | **Protocol** | **Service** | **Description** |
+|-----------------|--------------|-------------|-----------------|
+| 20, 21 | FTP | File Transfer Protocol | 20 for data transfer, 21 for control (login, commands). |
+| 22 | SSH | Secure Shell | Encrypted remote login and command execution. |
+| 23 | Telnet | Remote Terminal Access | Unencrypted remote login (obsolete, insecure). |
+| 25 | SMTP | Simple Mail Transfer Protocol | Sending emails between servers. |
+| 53 | DNS | Domain Name System | Resolves domain names to IP addresses. |
+| 67, 68 | DHCP | Dynamic Host Configuration Protocol | Assigns IP addresses automatically. |
+| 80 | HTTP | Hypertext Transfer Protocol | Standard web traffic (unencrypted). |
+| 110 | POP3 | Post Office Protocol v3 | Retrieves emails from mail servers. |
+| 143 | IMAP | Internet Message Access Protocol | Accesses emails with advanced features. |
+| 443 | HTTPS | Secure HTTP | Encrypted web traffic using SSL/TLS. |
+| 445 | SMB | Server Message Block | File/printer sharing in Windows networks. |
+| 3389 | RDP | Remote Desktop Protocol | Remote desktop access to Windows systems. |
+| 3306 | MySQL | Database Service | Default port for MySQL database connections. |
+| 5432 | PostgreSQL | Database Service | Default port for PostgreSQL database connections. |
+| 1521 | Oracle DB | Oracle Database | Default port for Oracle database services. |
+| 389 | LDAP | Lightweight Directory Access Protocol | Directory services (authentication, user info). |
+| 636 | LDAPS | Secure LDAP | Encrypted LDAP communication. |
+| 69 | TFTP | Trivial File Transfer Protocol | Lightweight file transfer, often for booting devices. |
+| 161, 162 | SNMP | Simple Network Management Protocol | Network monitoring and management. |
+| 137–139 | NetBIOS | Windows File Sharing | Legacy Windows networking services. |
+| 500 | ISAKMP | VPN (IPSec) | Key exchange for VPN tunnels. |
+| 1723 | PPTP | VPN Protocol | Point-to-Point Tunneling Protocol (legacy VPN). |
+| 1194 | OpenVPN | VPN Protocol | Secure VPN connections. |
+
+---
+
+## 🌐 HTTP vs HTTPS
+
+### HTTP
+- **Port:** 80  
+- **Definition:** HyperText Transfer Protocol.  
+- **Characteristics:**
+  - Stateless, plaintext communication.
+  - Vulnerable to interception and attacks.
+  - Legacy use, now discouraged.
+
+### HTTPS
+- **Port:** 443  
+- **Definition:** HyperText Transfer Protocol Secure.  
+- **Characteristics:**
+  - Uses SSL/TLS for encryption and authentication.
+  - Protects against eavesdropping and tampering.
+  - Mandatory for modern websites, e-commerce, and banking.
+  - Improves SEO and user trust.
+
+| Feature | HTTP | HTTPS |
+|---------|------|-------|
+| Encryption | ❌ None | ✅ SSL/TLS |
+| Security | Vulnerable | Secure |
+| Authentication | ❌ No | ✅ Certificate-based |
+| Browser Label | "Not Secure" | Padlock icon |
+| Use Cases | Legacy sites | Modern secure sites |
+
+---
+
+## 🌍 Domain Name System (DNS)
+
+- **Definition:** DNS is the "phonebook of the Internet," mapping domain names to IP addresses.  
+- **Port:** 53 (UDP/TCP).  
+- **Process:**
+  1. User enters domain name.
+  2. Resolver queries root server.
+  3. Root directs to TLD server.
+  4. TLD directs to authoritative server.
+  5. Authoritative server returns IP.
+  6. Browser connects to server.
+
+### Common DNS Records
+- **A Record:** Domain → IPv4 address.  
+- **AAAA Record:** Domain → IPv6 address.  
+- **CNAME:** Alias record.  
+- **MX:** Mail exchange record.  
+- **NS:** Nameserver record.  
+- **TXT:** Verification/metadata.  
+- **PTR:** Reverse lookup.
+
+### Security
+- **DNS Spoofing/Cache Poisoning:** Attackers insert false records.  
+- **DNSSEC:** Cryptographic signatures for authenticity.  
+- **DoH/DoT:** Encrypt DNS queries for privacy.
+
+---
+
+## 🔒 Firewall, IDS, IPS
+
+### Firewall
+- **Role:** Filters traffic based on rules.  
+- **Types:** Packet-filtering, Stateful, Application-layer, NGFW.  
+- **Purpose:** Gatekeeper controlling access.
+
+### IDS (Intrusion Detection System)
+- **Role:** Detects suspicious activity.  
+- **Types:** NIDS (network), HIDS (host).  
+- **Methods:** Signature-based, anomaly-based.  
+- **Purpose:** Security camera—alerts only.
+
+### IPS (Intrusion Prevention System)
+- **Role:** Detects and blocks malicious activity.  
+- **Placement:** Inline with traffic.  
+- **Purpose:** Security guard—actively prevents attacks.  
+
+| Feature | Firewall | IDS | IPS |
+|---------|----------|-----|-----|
+| Primary Role | Filters traffic | Detects intrusions | Detects & blocks intrusions |
+| Action | Allow/deny | Alerts/logs | Prevents/block traffic |
+| Placement | Edge/host | Passive monitoring | Inline |
+| Response | Rule-based | Notification only | Automated prevention |
+
+---
+
+## ✅ Key Takeaways
+- **Ports:** Essential for communication; know the common ones.  
+- **HTTP vs HTTPS:** Always prefer HTTPS for security.  
+- **DNS:** Critical for name resolution; secure with DNSSEC/DoH.  
+- **Firewall/IDS/IPS:** Layered defense—firewall (gatekeeper), IDS (camera), IPS (guard).  
+
+---
