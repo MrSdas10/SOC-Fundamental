@@ -1,7 +1,7 @@
 # 🛡️ SOC Fundamentals Journey
 
 ## 👋 About Me
-Hi, I'm an aspiring **SOC Analyst** with a strong interest in defensive cybersecurity.  
+Hi, I'm Souvik Das an aspiring **SOC Analyst** with a strong interest in defensive cybersecurity.  
 I am currently building my foundation in **Security Operations**, focusing on how to **detect, analyze, and respond to cyber threats** in real-world environments.
 
 My goal is to grow step-by-step in cybersecurity, starting with SOC fundamentals and progressing toward advanced blue team and security operations roles.
